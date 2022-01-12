@@ -41,8 +41,9 @@
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left">
-                                                    <div class="widget-heading">{{todo.text}}{% if todo.important %}<span style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #ff2006;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;" class="label label-danger label-as-badge">Important{% endif %}</span>      <span class="col-md-3" >{{todo.completion_date}}</span></div>
+                                                    <div class="widget-heading">{{todo.text}}  {% if todo.important %}<span style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #ff2006;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;" class="label label-danger label-as-badge">Important{% endif %}</span></div>
                                                 </div>
+                                                <div class="widget-content-middle"></div>
                                                 <div class="widget-content-right">
                                                     {% if todo.important %}
                                                         <button class="border-0 btn-transition btn">
@@ -90,6 +91,10 @@
                                                     </button>
                                                 </div>
                                                 
+                                            </div>
+                                            <div class="justify-content-md-center
+                                            w">
+                                                {{todo.completion_date}}
                                             </div>
                                         </div>
                                     </li>
