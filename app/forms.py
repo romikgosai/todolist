@@ -6,4 +6,5 @@ class TodoModelForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = ['text','completion_date']
-        
+        widgets = {'completion_date': forms.DateInput(format=('%m/%d/%Y'), attrs={'type':'date'}),
+}        
