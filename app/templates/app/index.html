@@ -79,9 +79,15 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="justify-content-md-center
-                                            w">
-                                                {{todo.completion_date}}
+                                            <div class="widget-content-wrapper">
+                                            <div class="justify-content-md-center">
+                                                <div class="widget-content-left">
+                                                        {{todo.completion_date}}
+                                                        {% if todo.is_past_due %}
+                                                            <span class="label label-danger label-as-badge" style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #ff2006;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;">Exceeded by {{ todo.date_difference }} </span>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>

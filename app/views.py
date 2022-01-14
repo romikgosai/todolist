@@ -2,14 +2,15 @@ from django import forms
 from django.shortcuts import redirect, render
 from .models import Todo
 from .forms import TodoModelForm
-
+from datetime import date
 
 # Create your views here.
 def index(request):
     todos = Todo.objects.all()
-    print(todos)
     form = TodoModelForm()
+    date_now = date.today()
     context = {
+        'today': date_now,
         'todos': todos,
         'form' : form
     }

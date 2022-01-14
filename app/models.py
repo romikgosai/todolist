@@ -8,8 +8,12 @@ class Todo(models.Model):
     completed = models.BooleanField(default=False)
     important = models.BooleanField(default=False)
     completion_date = models.DateField(auto_now_add=False,auto_now=False,blank=False)
-
+    
     def __str__(self):
         return self.text
 
-    
+    @property
+    def is_past_due(self):
+        return date.today() > self.completion_date
+    def date_difference(self):
+        return date.today() - self.completion_date
