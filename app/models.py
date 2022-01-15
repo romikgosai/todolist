@@ -4,10 +4,10 @@ from datetime import date
 
 # Create your models here.
 class Todo(models.Model):
-    text = models.CharField(max_length=50)
+    text = models.CharField("",max_length=50)
     completed = models.BooleanField(default=False)
     important = models.BooleanField(default=False)
-    completion_date = models.DateField(auto_now_add=False,auto_now=False,blank=False)
+    completion_date = models.DateField("Date:",auto_now_add=False,auto_now=False,blank=False)
     
     def __str__(self):
         return self.text
