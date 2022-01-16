@@ -102,7 +102,7 @@
             <div class="d-block text-right card-footer">
                 <form action="{% url 'add' %}" method="POST">
                     {% csrf_token %}
-                        {{form}}
+                        {{form.as_p}}
                         <input type="Submit" value="submit" class="btn btn-info col">
                     </form>
                     <a class="widget-content-left" href='{% url 'deleteall' %}' >
