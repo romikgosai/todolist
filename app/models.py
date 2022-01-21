@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from datetime import datetime
 
 
 # Create your models here.
@@ -14,6 +14,6 @@ class Todo(models.Model):
 
     @property
     def is_past_due(self):
-        return date.today() > self.completion_date
+        return datetime.now().date() > self.completion_date
     def date_difference(self):
-        return date.today() - self.completion_date
+        return abs((datetime.now().date() - self.completion_date).days)

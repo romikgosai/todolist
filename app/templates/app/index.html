@@ -84,7 +84,13 @@
                                                 <div class="widget-content-left">
                                                         {{todo.completion_date}}
                                                         {% if todo.is_past_due %}
-                                                            <span class="label label-danger label-as-badge" style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #ff2006;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;">Exceeded by {{ todo.date_difference }} </span>
+                                                        {% if not todo.completed %}
+                                                            <span class="label label-danger label-as-badge" style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #ff2006;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;">Exceeded by {{ todo.date_difference }} days.</span>
+                                                        {% endif %}
+                                                        {% else %}
+                                                        {% if not todo.completed %}
+                                                            <span class="label label-info label-as-badge" style="padding: 1px 9px 2px;font-size: 12.025px;font-weight: bold;white-space: nowrap;color: #ffffff;background-color: #00ff55;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;">{{ todo.date_difference }} days remaining.</span>
+                                                        {% endif %}
                                                         {% endif %}
                                                     </div>
                                                 </div>
